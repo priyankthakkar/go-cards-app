@@ -43,6 +43,17 @@ func main() {
 	// returns a new slice
 	cards = append(cards, "Six of Spades")
 	fmt.Println(cards)
+
+	/**
+	* to iterate over a slice of cards here, we are using for loop
+	* here range represents the slice, while index represents index of a card in the slice
+	* and aCard is a single card during the iteration
+	* here we are printing both index & aCard, it is important to know that
+	* every variable declared within for loop or inside program must be used
+	 */
+	for index, aCard := range cards {
+		fmt.Println(index, aCard)
+	}
 }
 
 /**
