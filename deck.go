@@ -7,6 +7,26 @@ import "fmt"
 type deck []string
 
 /**
+* function newDeck() here, creates a new deck, adds multiple cards to and returns the deck
+* we can see here, this function doesn't have receiver, because the aim of this function is
+* to create a deck, not to operate on a already created deck
+* we can see that this function has a return type, deck
+ */
+func newDeck() deck {
+	cards := deck{}
+	cardSuits := []string{"Diamonds", "Spades", "Hearts", "Clubs"}
+	cardValues := []string{"Ace", "Two", "Three", "Four"}
+
+	for _, suit := range cardSuits {
+		for _, value := range cardValues {
+			cards = append(cards, value+" of "+suit)
+		}
+	}
+
+	return cards
+}
+
+/**
 * Let's talk about function print() now
 * this method prints information about all the card within a deck
 * it is define with keyworld func

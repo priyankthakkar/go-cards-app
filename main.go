@@ -2,13 +2,9 @@ package main
 
 func main() {
 
-	// now we can see, as the type deck is available within package main
-	// we can access it and use it here
-	// as type deck is equivalent of slice of string, we can treat type
-	// deck like a slice of string and put new string elements to it
-	cards := deck{"Ace of Diamond", newCard()}
-
-	cards = append(cards, "Six of Spades")
+	// Much, much cleaner main() function, the call to function newDeck() here
+	// creates a new deck of cards and it is being assigned to cards
+	cards := newDeck()
 
 	// we know that function print() is declared with receiver (d deck)
 	// it means cards which is of type deck, has a function print() in them
@@ -16,8 +12,4 @@ func main() {
 	// to function print() via variable d in the receiver declration
 	// which will print information about all the cards
 	cards.print()
-}
-
-func newCard() string {
-	return "Five of Diamonds"
 }
