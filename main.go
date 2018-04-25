@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 func main() {
 
 	// now we can see, as the type deck is available within package main
@@ -12,9 +10,12 @@ func main() {
 
 	cards = append(cards, "Six of Spades")
 
-	for index, card := range cards {
-		fmt.Println(index, card)
-	}
+	// we know that function print() is declared with receiver (d deck)
+	// it means cards which is of type deck, has a function print() in them
+	// and when cards invoke the function print(), instance of cards will be passed
+	// to function print() via variable d in the receiver declration
+	// which will print information about all the cards
+	cards.print()
 }
 
 func newCard() string {
